@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "RootTabBarViewController.h"
+#import "HQMyMovieViewController.h"
+#import "HQFindTableViewController.h"
+#import "HQAccountTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +20,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[RootTabBarViewController alloc]init];
+    [self.window makeKeyAndVisible];
+
     // Override point for customization after application launch.
     return YES;
 }
+-(void)setTabBarView
+{
+    
+    
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
