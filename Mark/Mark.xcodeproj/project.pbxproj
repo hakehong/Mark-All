@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17E2E63B90EBACFE49F19706 /* libPods-Mark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FFC0DB0A69CD0228576DBC /* libPods-Mark.a */; };
+		930912F21E8101DD0051A5F0 /* HQFactoryUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 930912F11E8101DD0051A5F0 /* HQFactoryUI.m */; };
+		930912F61E8105590051A5F0 /* HQMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930912F51E8105590051A5F0 /* HQMovieTableViewCell.m */; };
 		931F4A261E7BDB3A0047C3B6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */; };
 		931F4A291E7BE0370047C3B6 /* BigButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F4A281E7BE0370047C3B6 /* BigButton.m */; };
 		93ED860A1E7BADD100567C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED86091E7BADD100567C0E /* main.m */; };
@@ -31,6 +33,10 @@
 		50FFC0DB0A69CD0228576DBC /* libPods-Mark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mark.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A1E070F634EBAA87638FD0 /* Pods-Mark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mark/Pods-Mark.debug.xcconfig"; sourceTree = "<group>"; };
 		82C9D7ECA06C6C2AFEDB69F0 /* Pods-Mark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mark/Pods-Mark.release.xcconfig"; sourceTree = "<group>"; };
+		930912F01E8101DD0051A5F0 /* HQFactoryUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQFactoryUI.h; sourceTree = "<group>"; };
+		930912F11E8101DD0051A5F0 /* HQFactoryUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQFactoryUI.m; sourceTree = "<group>"; };
+		930912F41E8105590051A5F0 /* HQMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQMovieTableViewCell.h; sourceTree = "<group>"; };
+		930912F51E8105590051A5F0 /* HQMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQMovieTableViewCell.m; sourceTree = "<group>"; };
 		931F4A241E7BDB3A0047C3B6 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		931F4A271E7BE0370047C3B6 /* BigButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigButton.h; sourceTree = "<group>"; };
@@ -95,6 +101,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		930912F31E8104CD0051A5F0 /* Find(发现) */ = {
+			isa = PBXGroup;
+			children = (
+				93ED86231E7BB46200567C0E /* HQFindTableViewController.h */,
+				93ED86241E7BB46200567C0E /* HQFindTableViewController.m */,
+				930912F41E8105590051A5F0 /* HQMovieTableViewCell.h */,
+				930912F51E8105590051A5F0 /* HQMovieTableViewCell.m */,
+			);
+			name = "Find(发现)";
+			sourceTree = "<group>";
+		};
 		93ED85FC1E7BADD100567C0E = {
 			isa = PBXGroup;
 			children = (
@@ -117,15 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				93ED863D1E7BDB0900567C0E /* Common */,
-				931F4A271E7BE0370047C3B6 /* BigButton.h */,
-				931F4A281E7BE0370047C3B6 /* BigButton.m */,
-				931F4A241E7BDB3A0047C3B6 /* UIView+Extension.h */,
-				931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */,
-				93ED86291E7BC80000567C0E /* GlobalHeader.h */,
 				93ED863C1E7BDAF900567C0E /* Tool */,
+				930912F31E8104CD0051A5F0 /* Find(发现) */,
 				93ED86221E7BB41800567C0E /* MyMovie(我的电影) */,
-				93ED860B1E7BADD100567C0E /* AppDelegate.h */,
-				93ED860C1E7BADD100567C0E /* AppDelegate.m */,
 				93ED862D1E7BD30400567C0E /* CycleMovieList.h */,
 				93ED862E1E7BD30400567C0E /* CycleMovieList.m */,
 				93ED86301E7BD4B000567C0E /* CycleMovie.h */,
@@ -140,8 +151,6 @@
 				93ED86341E7BDABA00567C0E /* DetailViewController.m */,
 				93ED86361E7BDADB00567C0E /* WebImgScrollView.h */,
 				93ED86371E7BDADB00567C0E /* WebImgScrollView.m */,
-				93ED86231E7BB46200567C0E /* HQFindTableViewController.h */,
-				93ED86241E7BB46200567C0E /* HQFindTableViewController.m */,
 				93ED86261E7BB48600567C0E /* HQAccountTableViewController.h */,
 				93ED86271E7BB48600567C0E /* HQAccountTableViewController.m */,
 				93ED86111E7BADD100567C0E /* Main.storyboard */,
@@ -156,6 +165,8 @@
 		93ED86081E7BADD100567C0E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93ED860B1E7BADD100567C0E /* AppDelegate.h */,
+				93ED860C1E7BADD100567C0E /* AppDelegate.m */,
 				93ED86091E7BADD100567C0E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -180,6 +191,13 @@
 		93ED863D1E7BDB0900567C0E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				930912F01E8101DD0051A5F0 /* HQFactoryUI.h */,
+				930912F11E8101DD0051A5F0 /* HQFactoryUI.m */,
+				931F4A271E7BE0370047C3B6 /* BigButton.h */,
+				931F4A281E7BE0370047C3B6 /* BigButton.m */,
+				931F4A241E7BDB3A0047C3B6 /* UIView+Extension.h */,
+				931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */,
+				93ED86291E7BC80000567C0E /* GlobalHeader.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -319,6 +337,8 @@
 				93ED860D1E7BADD100567C0E /* AppDelegate.m in Sources */,
 				93ED860A1E7BADD100567C0E /* main.m in Sources */,
 				93ED862C1E7BD2B100567C0E /* HttpTool.m in Sources */,
+				930912F21E8101DD0051A5F0 /* HQFactoryUI.m in Sources */,
+				930912F61E8105590051A5F0 /* HQMovieTableViewCell.m in Sources */,
 				931F4A291E7BE0370047C3B6 /* BigButton.m in Sources */,
 				93ED862F1E7BD30400567C0E /* CycleMovieList.m in Sources */,
 			);
