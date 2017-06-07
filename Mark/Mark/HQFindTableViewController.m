@@ -16,18 +16,28 @@
 #import "DetailViewController.h"
 #import "Masonry.h"
 #import "HQFactoryUI.h"
+#import "MJRefresh.h"
+#import "HQMovieTableViewCell.h"
+#import "UIImageView+WebCache.h"
+ NSString *const CellID1 =@"CellID1";
+ NSString *const CellID =@"CellID";
+static NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
+static NSString *const SecondUrl =@"http://114.215.104.21/v130/singles/cat?";
+static NSString *const MovieListUrl =@"http://114.215.104.21/v130/singles/list";
 
-
-NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
-@interface HQFindTableViewController ()<SDCycleScrollViewDelegate>
+@interface HQFindTableViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UIView *headerView;
 @property(nonatomic,copy)NSMutableArray *imagesURLStrings;
+@property(nonatomic,copy)NSDictionary *params;
+@property(nonatomic,assign) NSNumber *startNum;
 @end
 
 @implementation HQFindTableViewController
 {
     CycleMovieList *list;
     SDCycleScrollView *cycleScrollView;
+    CycleMovieList  *list2;
+    CycleMovieList  *list3;
 }
 #pragma mark-- 懒加载
 -(NSMutableArray *)imagesURLStrings
@@ -41,6 +51,11 @@ NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
     [super viewDidLoad];
     [self loadNewData];
     [self setTableViewHeader];
+    self.tableView.delegate =self;
+    self.tableView.dataSource =self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,6 +65,9 @@ NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
 }
 -(void)loadNewData
 {
+    _params =  [NSDictionary dictionaryWithObjectsAndKeys:@"10",@"count",@"HU0QIAGVzI0xIDq6k9RHcA%3D%3D",@"muid",@"0",@"start",@"1718",@"uid", nil];
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_enter(group);
     [HttpTool get:CycleUrl withCompletionBlock:^(id returnValue) {
         list=[CycleMovieList yy_modelWithDictionary:returnValue];
         _imagesURLStrings =[NSMutableArray arrayWithCapacity:list.data.count];
@@ -58,15 +76,30 @@ NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
             [_imagesURLStrings addObject:movie.img_url];
         }
         cycleScrollView.imageURLStringsGroup =_imagesURLStrings;
-        [self.tableView reloadData];
-        
+        dispatch_group_leave(group);
     } withFailureBlock:^(NSError *error) {
         NSLog(@"%@",error);
+        dispatch_group_leave(group);
     }];
+    dispatch_group_enter(group);
+    [HttpTool post:MovieListUrl parameters:_params  withCompletionBlock:^(id returnValue) {
+        list3=[CycleMovieList yy_modelWithJSON:returnValue];
+        
+        dispatch_group_leave(group);
+    } withFailureBlock:^(NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+        NSLog(@"%@",error);
+        dispatch_group_leave(group);
+    }];
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+    });
 }
+
 -(void)setTableViewHeader
 {
-    self.headerView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 250)];
+    self.headerView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 280)];
     self.tableView.tableHeaderView = self.headerView;
     cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 160) delegate:self placeholderImage:nil];
     [self.headerView addSubview:cycleScrollView];
@@ -178,9 +211,6 @@ NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
         make.bottom.equalTo(functionView.mas_bottom);
     }];
     
-    
-    
-    
 //    cycleScrollView.imageURLStringsGroup = imagesURLStrings;
     
 }
@@ -200,70 +230,41 @@ NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return list3.data.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    HQMovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellID];
     
+    if (cell ==nil) {
+        cell = [[HQMovieTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
+    }
+    
+    CycleMovie *movie =list3.data[indexPath.item];
+    [cell.backImage sd_setImageWithURL:[NSURL URLWithString:movie.img_url]];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    cell.countLabel.text = [numberFormatter stringFromNumber:movie.likes];
+    cell.titleLabel.text =movie.name;
+    //    cell.likeNum.text = movie.likes;
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+#pragma mark -点击对应cell进入影单详情
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *DetailView =[DetailViewController new];
+    DetailView.hidesBottomBarWhenPushed =YES;
+    [self.navigationController pushViewController:DetailView animated:YES];
+    CycleMovie *movie2 =list3.data[indexPath.item];
+    DetailView.movieId =movie2.Cycle_id;
+    //    DetailView.movieId =[list.data[index] Cycle_id];
+    NSLog(@"%@", DetailView.movieId);
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 230;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
