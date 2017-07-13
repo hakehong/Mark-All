@@ -12,6 +12,13 @@
 		930912F61E8105590051A5F0 /* HQMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930912F51E8105590051A5F0 /* HQMovieTableViewCell.m */; };
 		931F4A261E7BDB3A0047C3B6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */; };
 		931F4A291E7BE0370047C3B6 /* BigButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F4A281E7BE0370047C3B6 /* BigButton.m */; };
+		935ECB1B1F14C25800A27363 /* HQAccountSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB1A1F14C25800A27363 /* HQAccountSettingTableViewController.m */; };
+		935ECB2D1F14C29700A27363 /* UIView+XBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB1F1F14C29700A27363 /* UIView+XBExtension.m */; };
+		935ECB2E1F14C29700A27363 /* XBSettingItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB241F14C29700A27363 /* XBSettingItemModel.m */; };
+		935ECB2F1F14C29700A27363 /* XBSettingSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB261F14C29700A27363 /* XBSettingSectionModel.m */; };
+		935ECB301F14C29700A27363 /* XBMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB291F14C29700A27363 /* XBMeHeaderView.m */; };
+		935ECB311F14C29700A27363 /* XBMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 935ECB2A1F14C29700A27363 /* XBMeHeaderView.xib */; };
+		935ECB321F14C29700A27363 /* XBSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB2C1F14C29700A27363 /* XBSettingCell.m */; };
 		93ED860A1E7BADD100567C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED86091E7BADD100567C0E /* main.m */; };
 		93ED860D1E7BADD100567C0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED860C1E7BADD100567C0E /* AppDelegate.m */; };
 		93ED86101E7BADD100567C0E /* HQMyMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED860F1E7BADD100567C0E /* HQMyMovieViewController.m */; };
@@ -20,7 +27,6 @@
 		93ED86181E7BADD100567C0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ED86161E7BADD100567C0E /* LaunchScreen.storyboard */; };
 		93ED86211E7BB21B00567C0E /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED86201E7BB21B00567C0E /* RootTabBarViewController.m */; };
 		93ED86251E7BB46200567C0E /* HQFindTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED86241E7BB46200567C0E /* HQFindTableViewController.m */; };
-		93ED86281E7BB48600567C0E /* HQAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED86271E7BB48600567C0E /* HQAccountTableViewController.m */; };
 		93ED862C1E7BD2B100567C0E /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED862B1E7BD2B100567C0E /* HttpTool.m */; };
 		93ED862F1E7BD30400567C0E /* CycleMovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED862E1E7BD30400567C0E /* CycleMovieList.m */; };
 		93ED86321E7BD4B000567C0E /* CycleMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED86311E7BD4B000567C0E /* CycleMovie.m */; };
@@ -41,6 +47,20 @@
 		931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		931F4A271E7BE0370047C3B6 /* BigButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigButton.h; sourceTree = "<group>"; };
 		931F4A281E7BE0370047C3B6 /* BigButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigButton.m; sourceTree = "<group>"; };
+		935ECB191F14C25800A27363 /* HQAccountSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQAccountSettingTableViewController.h; sourceTree = "<group>"; };
+		935ECB1A1F14C25800A27363 /* HQAccountSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQAccountSettingTableViewController.m; sourceTree = "<group>"; };
+		935ECB1E1F14C29700A27363 /* UIView+XBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XBExtension.h"; sourceTree = "<group>"; };
+		935ECB1F1F14C29700A27363 /* UIView+XBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XBExtension.m"; sourceTree = "<group>"; };
+		935ECB211F14C29700A27363 /* XBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBConst.h; sourceTree = "<group>"; };
+		935ECB231F14C29700A27363 /* XBSettingItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBSettingItemModel.h; sourceTree = "<group>"; };
+		935ECB241F14C29700A27363 /* XBSettingItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBSettingItemModel.m; sourceTree = "<group>"; };
+		935ECB251F14C29700A27363 /* XBSettingSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBSettingSectionModel.h; sourceTree = "<group>"; };
+		935ECB261F14C29700A27363 /* XBSettingSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBSettingSectionModel.m; sourceTree = "<group>"; };
+		935ECB281F14C29700A27363 /* XBMeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMeHeaderView.h; sourceTree = "<group>"; };
+		935ECB291F14C29700A27363 /* XBMeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBMeHeaderView.m; sourceTree = "<group>"; };
+		935ECB2A1F14C29700A27363 /* XBMeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBMeHeaderView.xib; sourceTree = "<group>"; };
+		935ECB2B1F14C29700A27363 /* XBSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBSettingCell.h; sourceTree = "<group>"; };
+		935ECB2C1F14C29700A27363 /* XBSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBSettingCell.m; sourceTree = "<group>"; };
 		93ED86051E7BADD100567C0E /* Mark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93ED86091E7BADD100567C0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93ED860B1E7BADD100567C0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,8 +75,6 @@
 		93ED86201E7BB21B00567C0E /* RootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarViewController.m; sourceTree = "<group>"; };
 		93ED86231E7BB46200567C0E /* HQFindTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQFindTableViewController.h; sourceTree = "<group>"; };
 		93ED86241E7BB46200567C0E /* HQFindTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQFindTableViewController.m; sourceTree = "<group>"; };
-		93ED86261E7BB48600567C0E /* HQAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQAccountTableViewController.h; sourceTree = "<group>"; };
-		93ED86271E7BB48600567C0E /* HQAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQAccountTableViewController.m; sourceTree = "<group>"; };
 		93ED86291E7BC80000567C0E /* GlobalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalHeader.h; sourceTree = "<group>"; };
 		93ED862A1E7BD2B100567C0E /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		93ED862B1E7BD2B100567C0E /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
@@ -112,6 +130,67 @@
 			name = "Find(发现)";
 			sourceTree = "<group>";
 		};
+		935ECB181F14C22400A27363 /* Accoun(账号) */ = {
+			isa = PBXGroup;
+			children = (
+				935ECB1C1F14C29700A27363 /* XBSettingController */,
+				935ECB191F14C25800A27363 /* HQAccountSettingTableViewController.h */,
+				935ECB1A1F14C25800A27363 /* HQAccountSettingTableViewController.m */,
+			);
+			name = "Accoun(账号)";
+			sourceTree = "<group>";
+		};
+		935ECB1C1F14C29700A27363 /* XBSettingController */ = {
+			isa = PBXGroup;
+			children = (
+				935ECB1D1F14C29700A27363 /* Category */,
+				935ECB201F14C29700A27363 /* Const */,
+				935ECB221F14C29700A27363 /* Model */,
+				935ECB271F14C29700A27363 /* View */,
+			);
+			path = XBSettingController;
+			sourceTree = "<group>";
+		};
+		935ECB1D1F14C29700A27363 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				935ECB1E1F14C29700A27363 /* UIView+XBExtension.h */,
+				935ECB1F1F14C29700A27363 /* UIView+XBExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		935ECB201F14C29700A27363 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				935ECB211F14C29700A27363 /* XBConst.h */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		935ECB221F14C29700A27363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				935ECB231F14C29700A27363 /* XBSettingItemModel.h */,
+				935ECB241F14C29700A27363 /* XBSettingItemModel.m */,
+				935ECB251F14C29700A27363 /* XBSettingSectionModel.h */,
+				935ECB261F14C29700A27363 /* XBSettingSectionModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		935ECB271F14C29700A27363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				935ECB281F14C29700A27363 /* XBMeHeaderView.h */,
+				935ECB291F14C29700A27363 /* XBMeHeaderView.m */,
+				935ECB2A1F14C29700A27363 /* XBMeHeaderView.xib */,
+				935ECB2B1F14C29700A27363 /* XBSettingCell.h */,
+				935ECB2C1F14C29700A27363 /* XBSettingCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		93ED85FC1E7BADD100567C0E = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +212,7 @@
 		93ED86071E7BADD100567C0E /* Mark */ = {
 			isa = PBXGroup;
 			children = (
+				935ECB181F14C22400A27363 /* Accoun(账号) */,
 				93ED863D1E7BDB0900567C0E /* Common */,
 				93ED863C1E7BDAF900567C0E /* Tool */,
 				930912F31E8104CD0051A5F0 /* Find(发现) */,
@@ -151,8 +231,6 @@
 				93ED86341E7BDABA00567C0E /* DetailViewController.m */,
 				93ED86361E7BDADB00567C0E /* WebImgScrollView.h */,
 				93ED86371E7BDADB00567C0E /* WebImgScrollView.m */,
-				93ED86261E7BB48600567C0E /* HQAccountTableViewController.h */,
-				93ED86271E7BB48600567C0E /* HQAccountTableViewController.m */,
 				93ED86111E7BADD100567C0E /* Main.storyboard */,
 				93ED86141E7BADD100567C0E /* Assets.xcassets */,
 				93ED86161E7BADD100567C0E /* LaunchScreen.storyboard */,
@@ -267,6 +345,7 @@
 				93ED86181E7BADD100567C0E /* LaunchScreen.storyboard in Resources */,
 				93ED86151E7BADD100567C0E /* Assets.xcassets in Resources */,
 				93ED86131E7BADD100567C0E /* Main.storyboard in Resources */,
+				935ECB311F14C29700A27363 /* XBMeHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,13 +405,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				93ED86381E7BDADB00567C0E /* WebImgScrollView.m in Sources */,
+				935ECB1B1F14C25800A27363 /* HQAccountSettingTableViewController.m in Sources */,
 				93ED86321E7BD4B000567C0E /* CycleMovie.m in Sources */,
 				931F4A261E7BDB3A0047C3B6 /* UIView+Extension.m in Sources */,
 				93ED86251E7BB46200567C0E /* HQFindTableViewController.m in Sources */,
 				93ED86211E7BB21B00567C0E /* RootTabBarViewController.m in Sources */,
-				93ED86281E7BB48600567C0E /* HQAccountTableViewController.m in Sources */,
+				935ECB2D1F14C29700A27363 /* UIView+XBExtension.m in Sources */,
+				935ECB301F14C29700A27363 /* XBMeHeaderView.m in Sources */,
+				935ECB2F1F14C29700A27363 /* XBSettingSectionModel.m in Sources */,
 				93ED86101E7BADD100567C0E /* HQMyMovieViewController.m in Sources */,
 				93ED86351E7BDABA00567C0E /* DetailViewController.m in Sources */,
+				935ECB321F14C29700A27363 /* XBSettingCell.m in Sources */,
 				93ED863B1E7BDAE700567C0E /* DetailViewTool.m in Sources */,
 				93ED860D1E7BADD100567C0E /* AppDelegate.m in Sources */,
 				93ED860A1E7BADD100567C0E /* main.m in Sources */,
@@ -340,6 +423,7 @@
 				930912F21E8101DD0051A5F0 /* HQFactoryUI.m in Sources */,
 				930912F61E8105590051A5F0 /* HQMovieTableViewCell.m in Sources */,
 				931F4A291E7BE0370047C3B6 /* BigButton.m in Sources */,
+				935ECB2E1F14C29700A27363 /* XBSettingItemModel.m in Sources */,
 				93ED862F1E7BD30400567C0E /* CycleMovieList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

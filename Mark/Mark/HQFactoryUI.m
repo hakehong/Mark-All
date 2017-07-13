@@ -33,7 +33,7 @@
     }
     button.titleLabel.font = [UIFont systemFontOfSize:fontSize]
 ;
-    
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return button;
 }
 + (UILabel *)labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize{

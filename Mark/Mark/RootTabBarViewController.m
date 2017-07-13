@@ -9,7 +9,7 @@
 #import "RootTabBarViewController.h"
 #import "HQMyMovieViewController.h"
 #import "HQFindTableViewController.h"
-#import "HQAccountTableViewController.h"
+#import "HQAccountSettingTableViewController.h"
 #import "GlobalHeader.h"
 
 @interface RootTabBarViewController ()
@@ -41,7 +41,7 @@
     // 添加子控制器
     [self  setupChildVC:[[HQFindTableViewController alloc] init] title:@"发现" image:@"foundDownIcon" selectedImage:@"foundUpIcon"];
     [self setupChildVC:[[HQMyMovieViewController alloc] init] title:@"我的电影" image:@"mymovieDownIcon" selectedImage:@"mymovieUpIcon"];
-    [self  setupChildVC:[[HQAccountTableViewController alloc] init] title:@"账号" image:@"personDownIcon" selectedImage:@"personUpIcon"];
+    [self  setupChildVC:[[HQAccountSettingTableViewController alloc] init] title:@"账号" image:@"personDownIcon" selectedImage:@"personUpIcon"];
     // Do any additional setup after loading the view.
 }
 

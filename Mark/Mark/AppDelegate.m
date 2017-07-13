@@ -10,7 +10,6 @@
 #import "RootTabBarViewController.h"
 #import "HQMyMovieViewController.h"
 #import "HQFindTableViewController.h"
-#import "HQAccountTableViewController.h"
 
 @interface AppDelegate ()
 
