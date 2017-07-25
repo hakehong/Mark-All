@@ -19,6 +19,13 @@
 		935ECB301F14C29700A27363 /* XBMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB291F14C29700A27363 /* XBMeHeaderView.m */; };
 		935ECB311F14C29700A27363 /* XBMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 935ECB2A1F14C29700A27363 /* XBMeHeaderView.xib */; };
 		935ECB321F14C29700A27363 /* XBSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB2C1F14C29700A27363 /* XBSettingCell.m */; };
+		937D4BE21F272B470057B083 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D4BD71F272B470057B083 /* SearchViewController.m */; };
+		937D4BE31F272B470057B083 /* searchMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D4BD91F272B470057B083 /* searchMovie.m */; };
+		937D4BE41F272B470057B083 /* seachMovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D4BDB1F272B470057B083 /* seachMovieList.m */; };
+		937D4BE51F272B470057B083 /* imageAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D4BDD1F272B470057B083 /* imageAll.m */; };
+		937D4BE61F272B470057B083 /* MovieTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D4BDF1F272B470057B083 /* MovieTool.m */; };
+		937D4BE71F272B470057B083 /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D4BE11F272B470057B083 /* searchCell.m */; };
+		937D4BEA1F2747910057B083 /* HQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D4BE91F2747910057B083 /* HQTextField.m */; };
 		93ED860A1E7BADD100567C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED86091E7BADD100567C0E /* main.m */; };
 		93ED860D1E7BADD100567C0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED860C1E7BADD100567C0E /* AppDelegate.m */; };
 		93ED86101E7BADD100567C0E /* HQMyMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED860F1E7BADD100567C0E /* HQMyMovieViewController.m */; };
@@ -61,6 +68,20 @@
 		935ECB2A1F14C29700A27363 /* XBMeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBMeHeaderView.xib; sourceTree = "<group>"; };
 		935ECB2B1F14C29700A27363 /* XBSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBSettingCell.h; sourceTree = "<group>"; };
 		935ECB2C1F14C29700A27363 /* XBSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBSettingCell.m; sourceTree = "<group>"; };
+		937D4BD61F272B470057B083 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		937D4BD71F272B470057B083 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		937D4BD81F272B470057B083 /* searchMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchMovie.h; sourceTree = "<group>"; };
+		937D4BD91F272B470057B083 /* searchMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchMovie.m; sourceTree = "<group>"; };
+		937D4BDA1F272B470057B083 /* seachMovieList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seachMovieList.h; sourceTree = "<group>"; };
+		937D4BDB1F272B470057B083 /* seachMovieList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = seachMovieList.m; sourceTree = "<group>"; };
+		937D4BDC1F272B470057B083 /* imageAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageAll.h; sourceTree = "<group>"; };
+		937D4BDD1F272B470057B083 /* imageAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageAll.m; sourceTree = "<group>"; };
+		937D4BDE1F272B470057B083 /* MovieTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTool.h; sourceTree = "<group>"; };
+		937D4BDF1F272B470057B083 /* MovieTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTool.m; sourceTree = "<group>"; };
+		937D4BE01F272B470057B083 /* searchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchCell.h; sourceTree = "<group>"; };
+		937D4BE11F272B470057B083 /* searchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCell.m; sourceTree = "<group>"; };
+		937D4BE81F2747910057B083 /* HQTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQTextField.h; sourceTree = "<group>"; };
+		937D4BE91F2747910057B083 /* HQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQTextField.m; sourceTree = "<group>"; };
 		93ED86051E7BADD100567C0E /* Mark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93ED86091E7BADD100567C0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93ED860B1E7BADD100567C0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -191,6 +212,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		937D4BD51F272B2D0057B083 /* Search(搜索) */ = {
+			isa = PBXGroup;
+			children = (
+				937D4BD61F272B470057B083 /* SearchViewController.h */,
+				937D4BD71F272B470057B083 /* SearchViewController.m */,
+				937D4BD81F272B470057B083 /* searchMovie.h */,
+				937D4BD91F272B470057B083 /* searchMovie.m */,
+				937D4BDA1F272B470057B083 /* seachMovieList.h */,
+				937D4BDB1F272B470057B083 /* seachMovieList.m */,
+				937D4BDC1F272B470057B083 /* imageAll.h */,
+				937D4BDD1F272B470057B083 /* imageAll.m */,
+				937D4BDE1F272B470057B083 /* MovieTool.h */,
+				937D4BDF1F272B470057B083 /* MovieTool.m */,
+				937D4BE01F272B470057B083 /* searchCell.h */,
+				937D4BE11F272B470057B083 /* searchCell.m */,
+				937D4BE81F2747910057B083 /* HQTextField.h */,
+				937D4BE91F2747910057B083 /* HQTextField.m */,
+			);
+			name = "Search(搜索)";
+			sourceTree = "<group>";
+		};
 		93ED85FC1E7BADD100567C0E = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +254,7 @@
 		93ED86071E7BADD100567C0E /* Mark */ = {
 			isa = PBXGroup;
 			children = (
+				937D4BD51F272B2D0057B083 /* Search(搜索) */,
 				935ECB181F14C22400A27363 /* Accoun(账号) */,
 				93ED863D1E7BDB0900567C0E /* Common */,
 				93ED863C1E7BDAF900567C0E /* Tool */,
@@ -404,20 +447,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937D4BE71F272B470057B083 /* searchCell.m in Sources */,
 				93ED86381E7BDADB00567C0E /* WebImgScrollView.m in Sources */,
+				937D4BEA1F2747910057B083 /* HQTextField.m in Sources */,
 				935ECB1B1F14C25800A27363 /* HQAccountSettingTableViewController.m in Sources */,
 				93ED86321E7BD4B000567C0E /* CycleMovie.m in Sources */,
+				937D4BE41F272B470057B083 /* seachMovieList.m in Sources */,
 				931F4A261E7BDB3A0047C3B6 /* UIView+Extension.m in Sources */,
 				93ED86251E7BB46200567C0E /* HQFindTableViewController.m in Sources */,
 				93ED86211E7BB21B00567C0E /* RootTabBarViewController.m in Sources */,
 				935ECB2D1F14C29700A27363 /* UIView+XBExtension.m in Sources */,
 				935ECB301F14C29700A27363 /* XBMeHeaderView.m in Sources */,
+				937D4BE21F272B470057B083 /* SearchViewController.m in Sources */,
 				935ECB2F1F14C29700A27363 /* XBSettingSectionModel.m in Sources */,
 				93ED86101E7BADD100567C0E /* HQMyMovieViewController.m in Sources */,
+				937D4BE31F272B470057B083 /* searchMovie.m in Sources */,
 				93ED86351E7BDABA00567C0E /* DetailViewController.m in Sources */,
 				935ECB321F14C29700A27363 /* XBSettingCell.m in Sources */,
 				93ED863B1E7BDAE700567C0E /* DetailViewTool.m in Sources */,
+				937D4BE51F272B470057B083 /* imageAll.m in Sources */,
 				93ED860D1E7BADD100567C0E /* AppDelegate.m in Sources */,
+				937D4BE61F272B470057B083 /* MovieTool.m in Sources */,
 				93ED860A1E7BADD100567C0E /* main.m in Sources */,
 				93ED862C1E7BD2B100567C0E /* HttpTool.m in Sources */,
 				930912F21E8101DD0051A5F0 /* HQFactoryUI.m in Sources */,

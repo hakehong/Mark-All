@@ -19,6 +19,7 @@
 #import "MJRefresh.h"
 #import "HQMovieTableViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "SearchViewController.h"
  NSString *const CellID1 =@"CellID1";
  NSString *const CellID =@"CellID";
 static NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
@@ -51,6 +52,8 @@ static NSString *const MovieListUrl =@"http://114.215.104.21/v130/singles/list";
     [super viewDidLoad];
     [self loadNewData];
     [self setTableViewHeader];
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"searchDownIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(doSearch)];
+   
     self.tableView.delegate =self;
     self.tableView.dataSource =self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -62,6 +65,12 @@ static NSString *const MovieListUrl =@"http://114.215.104.21/v130/singles/list";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+//跳转到搜索界面
+-(void)doSearch{
+    SearchViewController *vc =[[SearchViewController alloc]init];
+    vc.hidesBottomBarWhenPushed =YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)loadNewData
 {
