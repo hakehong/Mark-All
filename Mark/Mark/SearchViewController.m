@@ -7,7 +7,7 @@
 //
 
 
-
+#define pading 10
 #import "SearchViewController.h"
 #import "HttpTool.h"
 #import "seachMovieList.h"
@@ -26,7 +26,7 @@ static NSString *const CellID =@"searchCell";
 @property (nonatomic , strong) UICollectionView *collectionView;
 @property (strong, nonatomic)  UIView *centerView;
 
-@property (strong, nonatomic)   HQTextField *searchTextField;
+@property (strong, nonatomic)  HQTextField *searchTextField;
 
 @property (strong, nonatomic)  UILabel *firstLabel;
 @property (strong, nonatomic)  UILabel *secondLabel;
@@ -45,17 +45,20 @@ static NSString *const CellID =@"searchCell";
         _searchTextField.backgroundColor =[UIColor whiteColor];
         //    _searchTextField.placeholder =@"输入电影名/导演/演员/编剧";
         _searchTextField.font = [UIFont systemFontOfSize:14];
-        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"  输入电影名/导演/演员/编剧" attributes:
+        NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"输入电影名/导演/演员/编剧" attributes:
                                           @{NSForegroundColorAttributeName:RGB(163, 170, 172),
                                             NSFontAttributeName:_searchTextField.font
                                             }];
         _searchTextField.attributedPlaceholder = attrString;
+        _searchTextField.delegate =self;
     }
     return _searchTextField ;
 }
 -(UILabel *)firstLabel{
     if (!_firstLabel) {
         _firstLabel =[[UILabel alloc]init];
+        _firstLabel.textColor = [UIColor blackColor];
+        _firstLabel.font =[UIFont systemFontOfSize:14];
         
     }
     return _firstLabel;
@@ -63,13 +66,14 @@ static NSString *const CellID =@"searchCell";
 -(UILabel *)secondLabel{
     if (!_secondLabel) {
         _secondLabel =[[UILabel alloc]init];
+        _secondLabel.textColor =GlobalBg;
         
     }
     return _secondLabel;
 }
 -(UIImageView *)colonImage{
     if (!_colonImage) {
-        _colonImage =[[UIImageView alloc]init];
+        _colonImage =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"searchEmptyIcon"]];
     }
     return _colonImage;
 }
@@ -83,7 +87,6 @@ static NSString *const CellID =@"searchCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _searchTextField.delegate =self;
     self.navigationItem.hidesBackButton =YES;
     self.title =@"搜索";
     self.view.backgroundColor =BackgroundColor;
@@ -94,7 +97,20 @@ static NSString *const CellID =@"searchCell";
 //    });
 //    [self.collectionView reloadData];
     [self setSearchView];
+    [self getTheLines];
     
+}
+-(void)getTheLines{
+    NSString *url =@"http://api.markapp.cn/v160/resources/lines?";
+    [HttpTool get:url withCompletionBlock:^(id returnValue) {
+        NSDictionary *dic =returnValue;
+        self.firstLabel.text =dic[@"data"][@"word"];
+        self.secondLabel.text =dic[@"data"][@"title"];
+        
+    } withFailureBlock:^(NSError *error) {
+        nil;
+    }];
+
 }
 -(void)setupUI{
     
@@ -105,6 +121,29 @@ static NSString *const CellID =@"searchCell";
         make.top.equalTo(self.view.mas_top).offset(64);
         make.height.equalTo(@40);
     }];
+    [self.view addSubview:self.centerView];
+    [self.centerView mas_makeConstraints:^(MASConstraintMaker *make){
+        make.top.equalTo(self.searchTextField.mas_bottom).offset(80);
+        make.left.right.equalTo(self.view);
+        make.height.equalTo(@80);
+    }];
+    [self.centerView addSubview:self.colonImage];
+    [self.centerView addSubview:self.firstLabel];
+    [self.centerView addSubview:self.secondLabel];
+    [self.colonImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.centerView.mas_left).offset(60);
+        make.top.equalTo(self.centerView.mas_top);
+        make.width.equalTo(@20);
+        make.height.equalTo(@20);
+    }];
+    [self.firstLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.centerView.mas_centerX);
+        make.top.equalTo(self.colonImage.mas_bottom).offset(8);
+    }];
+    [self.secondLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.firstLabel.mas_bottom).offset(20);
+        make.right.equalTo(self.centerView.mas_right).offset(-60);
+    }];
 }
 -(void)dismissVC{
     [self.navigationController popViewControllerAnimated:YES];
@@ -112,15 +151,15 @@ static NSString *const CellID =@"searchCell";
 -(void)setSearchView
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake((kScreenWidth -40)/3, (kScreenWidth -40)/3);
+    flowLayout.itemSize = CGSizeMake((kScreenWidth -40)/3, (kScreenWidth -40)*4/9);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.minimumLineSpacing = 10;//设置每个item之间的间距
 //  搜索框的高度为40
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 120, kScreenWidth, kScreenHeight-120) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 104, kScreenWidth, kScreenHeight-104) collectionViewLayout:flowLayout];
+    collectionView.backgroundColor =BackgroundColor;
     collectionView.delegate = self;
     collectionView.dataSource = self;
     collectionView.showsVerticalScrollIndicator = YES;
-    collectionView.backgroundColor = [UIColor whiteColor];
     
     _collectionView=collectionView;
     
@@ -129,10 +168,26 @@ static NSString *const CellID =@"searchCell";
 
     
 }
+//定义每个UICollectionView 的边距
+- ( UIEdgeInsets )collectionView:( UICollectionView *)collectionView layout:( UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:( NSInteger )section {
+    return UIEdgeInsetsMake ( pading , pading , pading , pading );
+}
+//设置水平间距 (同一行的cell的左右间距）
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return pading;
+}
+//垂直间距 (同一列cell上下间距)
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return pading;
+}
 //- (IBAction)movieListBtn:(UIButton *)sender {
 //    MovieListViewController *movieList =[[MovieListViewController alloc]init];
 //    [self.navigationController pushViewController:movieList animated:YES];
 //}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.searchTextField resignFirstResponder];
+    return YES;
+}
 - (void)textFieldEditChanged:(UITextField *)textField
 
 {
@@ -140,7 +195,7 @@ static NSString *const CellID =@"searchCell";
     NSLog(@"textfield text %@",textField.text);
     if (textField.text.length != 0 ) {
         
-        [self.centerView removeFromSuperview];
+//        [self.centerView removeFromSuperview];
         [self.view addSubview:_collectionView];
 //        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC));
 //        
@@ -157,21 +212,14 @@ static NSString *const CellID =@"searchCell";
     [HttpTool get:url withCompletionBlock:^(id returnValue) {
          _list =[seachMovieList yy_modelWithDictionary:returnValue];
 //        CompletionBlock(_movieList);
-        
+        [self.collectionView reloadData];
     } withFailureBlock:^(NSError *error) {
         nil;
     }];
   
     
 }
-- (IBAction)dismissSearch:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [_searchTextField resignFirstResponder];
-    return YES;
-}
+
 //-(seachMovieList *)setMovieList
 //{
 //    if (_movieList ==nil) {
@@ -184,7 +232,16 @@ static NSString *const CellID =@"searchCell";
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 20;
+    if (_list.subjects.count>0) {
+        self.centerView.hidden =YES;
+        return _list.subjects.count;
+        
+    }else{
+        self.centerView.hidden =NO;
+        
+    }
+    return 0;
+   
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -214,7 +271,5 @@ static NSString *const CellID =@"searchCell";
 //{
 //    return YES;
 //}
-- (IBAction)PopView:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
+
 @end

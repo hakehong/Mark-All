@@ -10,10 +10,18 @@
 #import "GlobalHeader.h"
 #import "Masonry.h"
 @interface searchCell()
-
+@property(nonatomic,strong)UIView *btnView;  //按钮底下的白色背景
 @end
 @implementation searchCell
 #pragma mark 懒加载
+-(UIView *)btnView{
+    if (!_btnView) {
+        _btnView =[[UIView alloc]init];
+        _btnView.backgroundColor =[UIColor whiteColor];
+        
+    }
+    return _btnView ;
+}
 -(UIView *)labelView{
     if (!_labelView) {
         _labelView =[[UIView alloc]init];
@@ -33,12 +41,16 @@
 -(UIButton *)addBtn{
     if (!_addBtn) {
         _addBtn =[UIButton buttonWithType:UIButtonTypeCustom];
+        [_addBtn setImage:[UIImage imageNamed:@"buildSingleIcon"] forState:UIControlStateNormal];
+        [_addBtn addTarget:self action:@selector(addMovie) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addBtn;
 }
 -(UILabel *)nameLabel{
     if (!_nameLabel) {
         _nameLabel=[[UILabel alloc]init];
+        _nameLabel.font =[UIFont systemFontOfSize:13];
+        _nameLabel.textAlignment = NSTextAlignmentCenter;
         _nameLabel.lineBreakMode =NSLineBreakByTruncatingTail;
         _nameLabel.textColor =GlobalBg;
         
@@ -54,19 +66,25 @@
     return self;
 }
 -(void)setupUI{
+  ;
     [self addSubview:self.bgImageView];
-    [self.bgImageView addSubview:self.addBtn];
+    [self.bgImageView addSubview:self.btnView] ;
+    [self.btnView addSubview:self.addBtn];
     [self addSubview:self.labelView];
     [self.labelView addSubview:self.nameLabel];
     [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
         make.bottom.equalTo(self.mas_bottom).offset(-20);
     }];
-    [self.addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.btnView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
-        make.bottom.equalTo(self.mas_bottom);
+        make.bottom.equalTo(self.bgImageView.mas_bottom);
         make.height.equalTo(@20);
         make.width.equalTo(@40);
+    }];
+    [self.addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.btnView.mas_centerX);
+        make.centerY.equalTo(self.btnView.mas_centerY);
     }];
     [self.labelView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self);
@@ -74,10 +92,17 @@
     }];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.labelView.mas_centerX);
-        make.centerY.equalTo(self.mas_centerY);
+        make.centerY.equalTo(self.labelView.mas_centerY);
         make.left.equalTo(self.labelView.mas_left).offset(3);
         make.right.equalTo(self.labelView.mas_right).offset(-3);
     }];
+}
+-(void)addMovie{
+    
+    self.addBtn setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>
+    if (self.addMovieBlock) {
+        self.addMovieBlock();
+    }
 }
 
 //-(void)layoutSubviews
@@ -94,7 +119,4 @@
 //    self.movieName.text =content;
 //}
 
-- (IBAction)addMovie:(UIButton *)sender {
-    [sender setBackgroundImage:[UIImage imageNamed:@"aloneAddIcon"] forState:UIControlStateNormal];
-}
 @end

@@ -13,6 +13,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.clearButtonMode = UITextFieldViewModeWhileEditing;
+        self.leftView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, 8, 0)];
+        self.leftViewMode =UITextFieldViewModeAlways;
         UIButton *button = [self valueForKey:@"_clearButton"];
         [button setImage:[UIImage imageNamed:@"deleteSearchIcon"] forState:UIControlStateNormal];
         
@@ -27,16 +29,16 @@
 }
 */
 //控制左视图位置
-- (CGRect)leftViewRectForBounds:(CGRect)bounds
-{
-    CGRect inset = CGRectMake(bounds.origin.x +10, bounds.origin.y, bounds.size.width, bounds.size.height);
-    return inset;
-    //return CGRectInset(bounds,50,0);
-}
-//控制清除按钮的位置
-//-(CGRect)clearButtonRectForBounds:(CGRect)bounds
+//- (CGRect)leftViewRectForBounds:(CGRect)bounds
 //{
-//return CGRectMake(bounds.origin.x + bounds.size.width - 50, bounds.origin.y + bounds.size.height -20, 16, 16);
+//    CGRect inset = CGRectMake(bounds.origin.x +20, bounds.origin.y, bounds.size.width, bounds.size.height);
+//    return inset;
+//    //return CGRectInset(bounds,50,0);
 //}
+//控制清除按钮的位置
+-(CGRect)clearButtonRectForBounds:(CGRect)bounds
+{
+return CGRectMake(bounds.origin.x + bounds.size.width - 40, bounds.origin.y + bounds.size.height -28, 16, 16);
+}
 
 @end
