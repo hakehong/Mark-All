@@ -98,8 +98,10 @@
     }];
 }
 -(void)addMovie{
-    
-    self.addBtn setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>
+    if () {
+        <#statements#>
+    }
+//    self.addBtn setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>
     if (self.addMovieBlock) {
         self.addMovieBlock();
     }

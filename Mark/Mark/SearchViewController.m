@@ -58,6 +58,7 @@ static NSString *const CellID =@"searchCell";
     if (!_firstLabel) {
         _firstLabel =[[UILabel alloc]init];
         _firstLabel.textColor = [UIColor blackColor];
+        _firstLabel.numberOfLines =0;
         _firstLabel.font =[UIFont systemFontOfSize:14];
         
     }
@@ -139,10 +140,12 @@ static NSString *const CellID =@"searchCell";
     [self.firstLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.centerView.mas_centerX);
         make.top.equalTo(self.colonImage.mas_bottom).offset(8);
+        make.left.equalTo(self.colonImage.mas_left);
+        make.right.equalTo(self.centerView.mas_right).offset(-60);
     }];
     [self.secondLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.firstLabel.mas_bottom).offset(20);
-        make.right.equalTo(self.centerView.mas_right).offset(-60);
+        make.right.equalTo(self.firstLabel.mas_right);
     }];
 }
 -(void)dismissVC{
