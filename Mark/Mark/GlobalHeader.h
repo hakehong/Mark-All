@@ -14,5 +14,7 @@
 #define BackgroundColor  [UIColor colorWithRed:(235)/255.0 green:(235)/255.0 blue:(235)/255.0 alpha:1.0]
 
 #define GlobalBg RGB(73, 95, 102)
+//分割线的颜色
+#define lineColor RGB(210,210,210)
 
 #endif /* GlobalHeader_h */

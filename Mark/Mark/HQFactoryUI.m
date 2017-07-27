@@ -7,9 +7,15 @@
 //
 
 #import "HQFactoryUI.h"
+#import "GlobalHeader.h"
 #define IsStringNotEmpty(string)        (string && ![@"" isEqualToString:string])
 \
 @implementation HQFactoryUI
++ (UIView *)separatorLine {
+    UIView *view = [UIView new];
+    view.backgroundColor = lineColor;
+    return view;
+}
 + (UIButton *)buttonWithImageName:(NSString *)imageName highlightImageName:(NSString *)highlightImageName target:(id)target action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     if (IsStringNotEmpty(imageName)) {

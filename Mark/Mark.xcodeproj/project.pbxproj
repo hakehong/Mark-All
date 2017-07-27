@@ -10,6 +10,11 @@
 		17E2E63B90EBACFE49F19706 /* libPods-Mark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FFC0DB0A69CD0228576DBC /* libPods-Mark.a */; };
 		930912F21E8101DD0051A5F0 /* HQFactoryUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 930912F11E8101DD0051A5F0 /* HQFactoryUI.m */; };
 		930912F61E8105590051A5F0 /* HQMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930912F51E8105590051A5F0 /* HQMovieTableViewCell.m */; };
+		930A3FA11F299B4C0067F8A7 /* HQFindClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A3FA01F299B4C0067F8A7 /* HQFindClassificationViewController.m */; };
+		930A3FA41F29D00B0067F8A7 /* ClassificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A3FA31F29D00B0067F8A7 /* ClassificationModel.m */; };
+		930A3FA71F29D0EC0067F8A7 /* classifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A3FA61F29D0EC0067F8A7 /* classifyModel.m */; };
+		930A3FAA1F29E6D90067F8A7 /* imageNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A3FA91F29E6D90067F8A7 /* imageNameCell.m */; };
+		930A3FAD1F29E6F20067F8A7 /* nameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A3FAC1F29E6F20067F8A7 /* nameCollectionViewCell.m */; };
 		931F4A261E7BDB3A0047C3B6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */; };
 		931F4A291E7BE0370047C3B6 /* BigButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F4A281E7BE0370047C3B6 /* BigButton.m */; };
 		935ECB1B1F14C25800A27363 /* HQAccountSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935ECB1A1F14C25800A27363 /* HQAccountSettingTableViewController.m */; };
@@ -50,6 +55,16 @@
 		930912F11E8101DD0051A5F0 /* HQFactoryUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQFactoryUI.m; sourceTree = "<group>"; };
 		930912F41E8105590051A5F0 /* HQMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQMovieTableViewCell.h; sourceTree = "<group>"; };
 		930912F51E8105590051A5F0 /* HQMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQMovieTableViewCell.m; sourceTree = "<group>"; };
+		930A3F9F1F299B4C0067F8A7 /* HQFindClassificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQFindClassificationViewController.h; sourceTree = "<group>"; };
+		930A3FA01F299B4C0067F8A7 /* HQFindClassificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQFindClassificationViewController.m; sourceTree = "<group>"; };
+		930A3FA21F29D00B0067F8A7 /* ClassificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationModel.h; sourceTree = "<group>"; };
+		930A3FA31F29D00B0067F8A7 /* ClassificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationModel.m; sourceTree = "<group>"; };
+		930A3FA51F29D0EC0067F8A7 /* classifyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classifyModel.h; sourceTree = "<group>"; };
+		930A3FA61F29D0EC0067F8A7 /* classifyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = classifyModel.m; sourceTree = "<group>"; };
+		930A3FA81F29E6D90067F8A7 /* imageNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageNameCell.h; sourceTree = "<group>"; };
+		930A3FA91F29E6D90067F8A7 /* imageNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageNameCell.m; sourceTree = "<group>"; };
+		930A3FAB1F29E6F20067F8A7 /* nameCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nameCollectionViewCell.h; sourceTree = "<group>"; };
+		930A3FAC1F29E6F20067F8A7 /* nameCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nameCollectionViewCell.m; sourceTree = "<group>"; };
 		931F4A241E7BDB3A0047C3B6 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		931F4A251E7BDB3A0047C3B6 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		931F4A271E7BE0370047C3B6 /* BigButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigButton.h; sourceTree = "<group>"; };
@@ -147,6 +162,16 @@
 				93ED86241E7BB46200567C0E /* HQFindTableViewController.m */,
 				930912F41E8105590051A5F0 /* HQMovieTableViewCell.h */,
 				930912F51E8105590051A5F0 /* HQMovieTableViewCell.m */,
+				930A3F9F1F299B4C0067F8A7 /* HQFindClassificationViewController.h */,
+				930A3FA01F299B4C0067F8A7 /* HQFindClassificationViewController.m */,
+				930A3FA21F29D00B0067F8A7 /* ClassificationModel.h */,
+				930A3FA31F29D00B0067F8A7 /* ClassificationModel.m */,
+				930A3FA51F29D0EC0067F8A7 /* classifyModel.h */,
+				930A3FA61F29D0EC0067F8A7 /* classifyModel.m */,
+				930A3FA81F29E6D90067F8A7 /* imageNameCell.h */,
+				930A3FA91F29E6D90067F8A7 /* imageNameCell.m */,
+				930A3FAB1F29E6F20067F8A7 /* nameCollectionViewCell.h */,
+				930A3FAC1F29E6F20067F8A7 /* nameCollectionViewCell.m */,
 			);
 			name = "Find(发现)";
 			sourceTree = "<group>";
@@ -452,17 +477,22 @@
 				937D4BEA1F2747910057B083 /* HQTextField.m in Sources */,
 				935ECB1B1F14C25800A27363 /* HQAccountSettingTableViewController.m in Sources */,
 				93ED86321E7BD4B000567C0E /* CycleMovie.m in Sources */,
+				930A3FA71F29D0EC0067F8A7 /* classifyModel.m in Sources */,
 				937D4BE41F272B470057B083 /* seachMovieList.m in Sources */,
 				931F4A261E7BDB3A0047C3B6 /* UIView+Extension.m in Sources */,
+				930A3FA11F299B4C0067F8A7 /* HQFindClassificationViewController.m in Sources */,
+				930A3FAD1F29E6F20067F8A7 /* nameCollectionViewCell.m in Sources */,
 				93ED86251E7BB46200567C0E /* HQFindTableViewController.m in Sources */,
 				93ED86211E7BB21B00567C0E /* RootTabBarViewController.m in Sources */,
 				935ECB2D1F14C29700A27363 /* UIView+XBExtension.m in Sources */,
 				935ECB301F14C29700A27363 /* XBMeHeaderView.m in Sources */,
 				937D4BE21F272B470057B083 /* SearchViewController.m in Sources */,
+				930A3FAA1F29E6D90067F8A7 /* imageNameCell.m in Sources */,
 				935ECB2F1F14C29700A27363 /* XBSettingSectionModel.m in Sources */,
 				93ED86101E7BADD100567C0E /* HQMyMovieViewController.m in Sources */,
 				937D4BE31F272B470057B083 /* searchMovie.m in Sources */,
 				93ED86351E7BDABA00567C0E /* DetailViewController.m in Sources */,
+				930A3FA41F29D00B0067F8A7 /* ClassificationModel.m in Sources */,
 				935ECB321F14C29700A27363 /* XBSettingCell.m in Sources */,
 				93ED863B1E7BDAE700567C0E /* DetailViewTool.m in Sources */,
 				937D4BE51F272B470057B083 /* imageAll.m in Sources */,

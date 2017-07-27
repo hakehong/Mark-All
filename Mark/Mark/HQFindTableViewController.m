@@ -20,6 +20,7 @@
 #import "HQMovieTableViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "SearchViewController.h"
+#import "HQFindClassificationViewController.h"
  NSString *const CellID1 =@"CellID1";
  NSString *const CellID =@"CellID";
 static NSString *const CycleUrl =@"http://114.215.104.21/v130/singles/banner?";
@@ -105,7 +106,10 @@ static NSString *const MovieListUrl =@"http://114.215.104.21/v130/singles/list";
         [self.tableView reloadData];
     });
 }
-
+-(void)ToFindClassVC{
+    HQFindClassificationViewController *vc =[[HQFindClassificationViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 -(void)setTableViewHeader
 {
     self.headerView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 280)];
@@ -122,6 +126,9 @@ static NSString *const MovieListUrl =@"http://114.215.104.21/v130/singles/list";
     }];
     UIView *oneView =[[UIView alloc]init];
     oneView.backgroundColor =[UIColor whiteColor];
+    oneView.userInteractionEnabled =YES;
+    UITapGestureRecognizer *tap1 =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(ToFindClassVC)];
+    [oneView addGestureRecognizer:tap1];
     [functionView addSubview:oneView];
     UIImageView *oneImage =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"notChooseSingle"]];
      UIImageView *oneImage1 =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"allSingleIcon"]];

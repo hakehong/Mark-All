@@ -18,6 +18,7 @@
     if (!_btnView) {
         _btnView =[[UIView alloc]init];
         _btnView.backgroundColor =[UIColor whiteColor];
+        _btnView.userInteractionEnabled =YES;
         
     }
     return _btnView ;
@@ -42,6 +43,7 @@
     if (!_addBtn) {
         _addBtn =[UIButton buttonWithType:UIButtonTypeCustom];
         [_addBtn setImage:[UIImage imageNamed:@"buildSingleIcon"] forState:UIControlStateNormal];
+        _addBtn.tag = 0;
         [_addBtn addTarget:self action:@selector(addMovie) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addBtn;
@@ -98,10 +100,15 @@
     }];
 }
 -(void)addMovie{
-    if () {
-        <#statements#>
+    NSLog(@"just-test");
+    if (self.addBtn.tag ==0) {
+        [self.addBtn setImage:[UIImage imageNamed:@"alreadyAddIcon"] forState:UIControlStateNormal];
+        self.addBtn.tag =1;
+    }else if (self.addBtn.tag ==1){
+        [self.addBtn setImage:[UIImage imageNamed:@"buildSingleIcon"] forState:UIControlStateNormal];
+        self.addBtn.tag =0;
     }
-//    self.addBtn setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>
+//    self.addBtn setValue:; forKey:<#(nonnull NSString *)#>
     if (self.addMovieBlock) {
         self.addMovieBlock();
     }

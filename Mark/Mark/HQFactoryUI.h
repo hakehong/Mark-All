@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 @import UIKit;
 @interface HQFactoryUI : NSObject
+/**分割线view */
++ (UIView *)separatorLine;
 /**UIButton按钮 */
 + (UIButton *)buttonWithImageName:(NSString *)imageName highlightImageName:(NSString *)highlightImageName target:(id)target action:(SEL)action;
 
