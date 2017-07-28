@@ -16,4 +16,5 @@
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *img_url;
 @property (nonatomic,strong) NSArray *cat;
+//@property (nonatomic,strong) classifyModel *cat;
 @end

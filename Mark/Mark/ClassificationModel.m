@@ -11,9 +11,15 @@
 #import "classifyModel.h"
 
 @implementation ClassificationModel
-- (NSString *)description{
-    return [self yy_modelDescription];
-}
+//- (NSString *)description{
+//    return [self yy_modelDescription];
+//}
+//+(NSDictionary *)modelCustomPropertyMapper
+//{
+//    return @{
+//             @"cat":@"cat"
+//             };
+//}
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
              @"cat" : classifyModel.class

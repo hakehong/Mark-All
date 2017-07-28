@@ -108,6 +108,7 @@ static NSString *const MovieListUrl =@"http://114.215.104.21/v130/singles/list";
 }
 -(void)ToFindClassVC{
     HQFindClassificationViewController *vc =[[HQFindClassificationViewController alloc]init];
+    vc.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)setTableViewHeader

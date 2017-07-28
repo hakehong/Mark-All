@@ -9,6 +9,7 @@
 #import "nameCollectionViewCell.h"
 #import "GlobalHeader.h"
 #import "HQFactoryUI.h"
+#import "Masonry.h"
 @interface nameCollectionViewCell()
 @property(nonatomic,strong)UILabel *nameLabel;
 @end
@@ -31,9 +32,10 @@
     return self;
 }
 -(void)setupUI{
-    UIView *lineView1= [HQFactoryUI separatorLine];
-    UIView *lineView2= [HQFactoryUI separatorLine];
-    UIView *lineView3= [HQFactoryUI separatorLine];
-    UIView *lineView4= [HQFactoryUI separatorLine];
+    [self addSubview:self.nameLabel];
+    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.mas_centerX);
+        make.centerY.equalTo(self.mas_centerY);
+    }];
 }
 @end
